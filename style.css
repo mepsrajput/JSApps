@@ -63,7 +63,7 @@ nav.navbar {
 }
 
 #app1 input[type=text], #app1 input[type=submit]{
-    width: 10%;
+    width: 150px;
     padding: 10px 20px;
     margin: auto;
     display: inline-block;
