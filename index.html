@@ -17,7 +17,7 @@
 		
 		<meta charset="utf-8" /> 
 				
-		<meta name="description" content="JSApps showcase various basic Javascript Applications created by Pradeep Singh" />
+		<meta name="description" content="JSApps showcase basic Javascript Apps to quickly calculate Area, Perimeter etc." />
     
 		<meta name="keywords" content="Pradeep Singh, Pradeep Singh Portfolio, 
 			JavaScript Applications, JavaScript Apps, JavaScript Basic Apps" />
@@ -93,6 +93,7 @@
 				<div id="navbarcol" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#app1" style="color: white">App1</a></li>
+						<li><a href="#app2" style="color: white">App2</a></li>
 						<li><a href="#contact" style="color: white">Contact&nbsp;(<span 
 							class="glyphicon glyphicon-phone-alt navGlyphicon">
 							</span><span>)</span></a>
@@ -107,21 +108,55 @@
 		</nav><!-- Navbar End -->		
 		
 		<div class="text-center noselect" id="app1">
-			<h2>Area and Perimeter of a Quadrilateral</h2>
+			<h2>Area and Perimeter</h2>
 			<hr id="lineStyle">
 			<div class="container-fluid content">
 				<div class="row">
-					<div class="col-md-12">
-						<p>Enter the length: <br /><br />
-						<input type="text" id="side1" />
-						<p>Enter the breadth: <br /><br />
-						<input type="text" id="side2" /><br /><br />
-						<input type="button"  value="Calculate"  onClick="calculate()" /></p>
-						<p id="data"></p>
+					<div class="col-md-4 col-xs-12">
+						<h3>Quadrilateral</h3>			
+						<hr id="lineStyle">
+						<div>Enter the length: <br />
+							<input type="text" id="length" />
+						</div><br />
+						<div>Enter the breadth: <br />
+							<input type="text" id="breadth" /><br /><br />
+						</div>
+						<div>
+							<input type="button" class="btn btn-primary" value="Calculate"  onClick="calculateQuad()" />
+						</div><br />
+						<div id="data"></div>
+					</div>
+					<div class="col-md-4 col-xs-12">
+						<h3>Triangle</h3>
+						<hr id="lineStyle">
+						<div>Enter the First Side: <br />
+							<input type="text" id="side1" />
+						</div><br />
+						<div>Enter the Second Side: <br />
+							<input type="text" id="side2" /><br /><br />
+						</div>
+						<div>Enter the Third Side: <br />
+							<input type="text" id="side3" /><br /><br />
+						</div>
+						<div>
+							<input type="button" class="btn btn-danger" value="Calculate"  onClick="calculateTri()" />
+						</div><br />
+						<div id="data2"></div>
+					</div>
+					<div class="col-md-4 col-xs-12">
+						<h3>Circle</h3>
+						<hr id="lineStyle">
+						<div>Enter the Radius: <br />
+							<input type="text" id="radius" />
+						</div><br />
+						<div>
+							<input type="button" class="btn btn-primary" value="Calculate"  onClick="calculateCircle()" />
+						</div><br />
+						<div id="data3"></div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div><!-- end of App1-section -->					
 
 		<!-- start of contact-section -->					
 		<div class="skillContainer text-center noselect parallax2" id="contact">
