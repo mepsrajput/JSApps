@@ -108,7 +108,7 @@
 		</nav><!-- Navbar End -->		
 		
 		<div class="text-center noselect" id="app1">
-			<h2>Area and Perimeter</h2>
+			<h2>Area and Perimeter (2-D Figures)</h2>
 			<hr id="lineStyle">
 			<div class="container-fluid content">
 				<div class="row">
@@ -156,7 +156,77 @@
 					</div>
 				</div>
 			</div>
-		</div><!-- end of App1-section -->					
+		</div><!-- end of App1-section -->	
+
+		<div class="text-center noselect" id="app2">
+			<h2>Area and Volume (3-D Figures)</h2>
+			<hr id="lineStyle">
+			<div class="container-fluid content">
+				<div class="row">
+				
+					<div class="col-md-3 col-xs-12">
+						<h3>Sphere</h3>			
+						<hr id="lineStyle">
+						<div>Enter the radius: <br />
+							<input type="text" id="sphereRadius" />
+						</div><br />
+						<div>
+							<input type="button" class="btn btn-danger" value="Calculate"  onClick="calculateSphere()" />
+						</div><br />
+						<div id="data4"></div>
+					</div><!--end of sphere-->
+					
+					<div class="col-md-3 col-xs-12">
+						<h3>Cone</h3>
+						<hr id="lineStyle">
+						<div>Enter the Radius of Base: <br />
+							<input type="text" id="coneRadius" />
+						</div><br />
+						<div>Enter the Slant Height: <br />
+							<input type="text" id="coneHeight" /><br /><br />
+						</div>
+						<div>
+							<input type="button" class="btn btn-danger" value="Calculate"  onClick="calculateCone()" />
+						</div><br />
+						<div id="data5"></div>
+					</div><!--end of Cone-->
+					
+					<div class="col-md-3 col-xs-12">
+						<h3>Cuboid</h3>
+						<hr id="lineStyle">
+						<div>Enter the First Side: <br />
+							<input type="text" id="cuboidLength" />
+						</div><br />
+						<div>Enter the Second Side: <br />
+							<input type="text" id="cuboidBreadth" /><br /><br />
+						</div>
+						<div>Enter the Third Side: <br />
+							<input type="text" id="cuboidHeight" /><br /><br />
+						</div>
+						<div>
+							<input type="button" class="btn btn-danger" value="Calculate"  onClick="calculateCuboid()" />
+						</div><br />
+						<div id="data6"></div>
+					</div><!--end of Cuboid-->
+					
+					<div class="col-md-3 col-xs-12">
+						<h3>Cylinder</h3>
+						<hr id="lineStyle">
+						<div>Enter the Radius: <br />
+							<input type="text" id="cylRadius" />
+						</div><br />
+						<div>Enter the Height: <br />
+							<input type="text" id="cylHeight" />
+						</div><br />
+						<div>
+							<input type="button" class="btn btn-danger" value="Calculate"  onClick="calculateCylinder()" />
+						</div><br />
+						<div id="data7"></div>
+					</div><!--end of Cylinder-->
+				</div>
+			</div>
+		</div><!-- end of App2-section -->					
+		
 
 		<!-- start of contact-section -->					
 		<div class="skillContainer text-center noselect parallax2" id="contact">
