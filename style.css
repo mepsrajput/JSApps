@@ -69,7 +69,8 @@ nav.navbar {
 
 #app1 input[type=text], #app1 input[type=submit], 
 #app2 input[type=text], #app2 input[type=submit], 
-#app3 input[type=text], #app3 input[type=submit]{
+#app3 input[type=text], #app3 input[type=submit],
+#app1 select {
     width: 150px;
     padding: 10px 20px;
     margin: auto;
@@ -79,6 +80,16 @@ nav.navbar {
     box-sizing: border-box;
 	outline: none;
 	color: black;
+}
+
+#app1 select {
+	background-color: yellow;
+	border: none;
+}
+
+#app1 select option{
+	background-color: #eee;
+	border: none;
 }
 
 #app2 {

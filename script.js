@@ -29,30 +29,110 @@ $(document).ready(function () {
         $navbar.collapse('hide');
     }
 	});
+	
+		$('.group').hide();
+		$('#parallelogram').show();
+		$('#selectMe').change(function () {
+			$('.group').hide();
+			$('#'+$(this).val()).show();
+		})
+
 });// jquery ends here
 
 
 //#1 Quadrilateral			
-function calculateQuad() {
-	var l = document.getElementById('length').value
-	, b = document.getElementById('breadth').value;
+function calculateQuad1() {
+	var ql1 = document.getElementById('quadLength1').value
+	, qb1 = document.getElementById('quadBreadth1').value;
 
-	var perimeter = ((l * 2 ) + (b * 2)).toFixed(2);
+	var perimeter = ( 2 * ( parseInt(ql1) + parseInt(qb1) ) ).toFixed(2);
 
-	var area = (l * b).toFixed(2);
+	var area = (ql1 * qb1).toFixed(2);
 	
-	if(isNaN(l) || isNaN(b)){
-		document.getElementById('data').innerHTML = "Please  enter numbers only";
+	if(isNaN(ql1) || isNaN(qb1)){
+		document.getElementById('quadData1').innerHTML = "Please  enter numbers only";
 		return;
-	} else if ( l <= 0 || b <=0 ){
-		document.getElementById('data').innerHTML = "Negative numbers and Zero don't make sense";
+	} else if ( ql1 <= 0 || qb1 <=0 ){
+		document.getElementById('quadData1').innerHTML = "Negative numbers and Zero don't make sense";
 		return;
     } else {
-		document.getElementById('data').innerHTML = "Area: " + area	+ "<br />Perimeter: " + perimeter; 
+		document.getElementById('quadData1').innerHTML = "Area: " + area	+ "<br />Perimeter: " + perimeter; 
 	}
 }
+function calculateQuad2() {
+	var ql2 = document.getElementById('quadLength2').value
 
+	var area = ( Math.pow(ql2,2) ).toFixed(2);
 
+	var perimeter = ( 4 * ql2 ).toFixed(2);
+	
+	if(isNaN(ql2)){
+		document.getElementById('quadData2').innerHTML = "Please  enter numbers only";
+		return;
+	} else if ( ql2 <= 0 ){
+		document.getElementById('quadData2').innerHTML = "Negative numbers and Zero don't make sense";
+		return;
+    } else {
+		document.getElementById('quadData2').innerHTML = "Area: " + area	+ "<br />Perimeter: " + perimeter; 
+	}
+}
+function calculateQuad3() {
+	var ql3 = document.getElementById('quadLength3').value
+	, rs = document.getElementById('rhombSide').value;
+
+	var perimeter = ( 4 * ql3 ).toFixed(2);
+
+	var area = ( ( ql3 * rs ) / 2 ).toFixed(2);
+	
+	if(isNaN(ql3) || isNaN(rs)){
+		document.getElementById('quadData3').innerHTML = "Please  enter numbers only";
+		return;
+	} else if ( ql3 <= 0 || rs <=0 ){
+		document.getElementById('quadData3').innerHTML = "Negative numbers and Zero don't make sense";
+		return;
+    } else {
+		document.getElementById('quadData3').innerHTML = "Area: " + area	+ "<br />Perimeter: " + perimeter; 
+	}
+}
+function calculateQuad4() {
+	var base1 = document.getElementById('base1').value
+	, base2 = document.getElementById('base2').value
+	, tp = document.getElementById('trapPerpendicular').value
+	, ts3 = document.getElementById('trapSide3').value
+	, ts4 = document.getElementById('trapSide4').value;
+
+	var area = (  tp * ( (base1) + (base2) ) / 2 ).toFixed(2);
+	
+	var perimeter = ( parseInt(base1) + parseInt(base2) + parseInt(ts3) + parseInt(ts4) * 1 ).toFixed(2); 
+	
+	if(isNaN(base1) || isNaN(base2) || isNaN(ts3) || isNaN(ts4) || isNaN(tp)){
+		document.getElementById('quadData4').innerHTML = "Please  enter numbers only";
+		return;
+	} else if ( base1 <= 0 || base2 <=0 || tp <=0 || ts3 <=0 || ts4 <=0 ){
+		document.getElementById('quadData4').innerHTML = "Negative numbers and Zero don't make sense";
+		return;
+    } else {
+		document.getElementById('quadData4').innerHTML = "Area: " + area	+ "<br />Perimeter: " + perimeter; 
+	}
+}
+function calculateQuad5() {
+	var ks1 = document.getElementById('kiteSide1').value
+	, ks2 = document.getElementById('kiteSide2').value;
+
+	var area = (( ks1 * ks2 ) / 2 ).toFixed(2);
+
+	var perimeter = ( 2 * ( (ks1) + (ks2) ) ).toFixed(2);
+	
+	if(isNaN(ks1) || isNaN(ks2)){
+		document.getElementById('quadData5').innerHTML = "Please  enter numbers only";
+		return;
+	} else if ( ks1 <= 0 || ks2 <=0 ){
+		document.getElementById('quadData5').innerHTML = "Negative numbers and Zero don't make sense";
+		return;
+    } else {
+		document.getElementById('quadData5').innerHTML = "Area: " + area	+ "<br />Perimeter: " + perimeter; 
+	}
+}
 //#2 Triangle
 function calculateTri() {
 	var s1 = document.getElementById('side1').value, 
