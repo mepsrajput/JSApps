@@ -80,7 +80,7 @@ function calculateQuad3() {
 	var ql3 = document.getElementById('quadLength3').value
 	, rs = document.getElementById('rhombSide').value;
 
-	var perimeter = ( 4 * ql3 ).toFixed(2);
+	var perimeter = ( 4 * rs ).toFixed(2);
 
 	var area = ( ( ql3 * rs ) / 2 ).toFixed(2);
 	
