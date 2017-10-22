@@ -121,7 +121,7 @@ function calculateQuad5() {
 
 	var area = (( ks1 * ks2 ) / 2 ).toFixed(2);
 
-	var perimeter = ( 2 * ( (ks1) + (ks2) ) ).toFixed(2);
+	var perimeter = ( 2 * ( parseInt(ks1) + parseInt(ks2) ) ).toFixed(2);
 	
 	if(isNaN(ks1) || isNaN(ks2)){
 		document.getElementById('quadData5').innerHTML = "Please  enter numbers only";
