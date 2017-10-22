@@ -120,18 +120,19 @@ function calculateSphere() {
 
 //#5 Cone
 function calculateCone() {
-	var cr = document.getElementById('coneRadius').value;
-	var cl = document.getElementById('coneHeight').value;
+	var cor = document.getElementById('coneRadius').value;
+	var coh = document.getElementById('coneHeight').value;
 
+	var col = Math.sqrt( Math.pow(cor,2)  + Math.pow(coh,2) );
 	
-	var coneArea = ((Math.PI * cr) * ( cr + cl )).toFixed(2);
+	var coneArea = ((Math.PI * cor) * ( cor + col )).toFixed(2);
 	
-	var coneVol = (( Math.PI * cr * cr * cl ) / 3).toFixed(2);
+	var coneVol = (( Math.PI * cor * cor * coh ) / 3).toFixed(2);
 	
-	if(isNaN(cr) || isNaN(cl)){
+	if(isNaN(cor) || isNaN(coh)){
 		document.getElementById('data5').innerHTML = "Please  enter numbers only";
 		return;
-	} else if (cr <= 0 || cl <= 0){
+	} else if (cor <= 0 || coh <= 0){
 		document.getElementById('data5').innerHTML = "Negative numbers and Zero don't make sense";
 		return;
     } else {
