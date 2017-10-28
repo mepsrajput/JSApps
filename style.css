@@ -71,7 +71,7 @@ nav.navbar {
 #app2 input[type=text], #app2 input[type=submit], 
 #app3 input[type=text], #app3 input[type=submit],
 #app1 select {
-    width: 150px;
+    width: 190px;
     padding: 10px 20px;
     margin: auto;
     display: inline-block;
