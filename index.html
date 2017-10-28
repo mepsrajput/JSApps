@@ -174,8 +174,8 @@
 							<div id="quadData3"></div>
 						
 						</div>
-						<div id="trapezium" class="group">
 						
+						<div id="trapezium" class="group">
 							<div>Enter the Base1: <br />
 								<input type="text" id="base1" />
 							</div><br />
@@ -197,6 +197,7 @@
 							</div><br />
 							<div id="quadData4"></div>
 						</div>
+						
 						<div id="kite" class="group">
 						
 							<div>Enter the side1 : <br />
@@ -212,25 +213,75 @@
 						</div>
 						
 					</div>
+					
 					<div class="col-md-4 col-xs-12">
 						<h3>Triangle</h3>
 						<hr id="lineStyle">
-						<div>Enter the First Side (a): <br />
-							<input type="text" id="side1" />
-						</div><br />
-						<div>Enter the Second Side (b): <br />
-							<input type="text" id="side2" /><br /><br />
+						<select id="selectTri">
+							<option value="scalene">Scalene Triangle</option>
+							<option value="equilateral">Equilateral Triangle</option>
+							<option value="isosceles">Isosceles Triangle</option>
+							<option value="right">Right Triangle</option>
+						</select><br /><br />
+						
+						<div id="scalene" class="group2">
+							<div>Enter the First Side (a): <br />
+								<input type="text" id="scaleneSide1" />
+							</div><br />
+							<div>Enter the Second Side (b): <br />
+								<input type="text" id="scaleneSide2" /><br /><br />
+							</div>
+							<div>Enter the Third Side (c): <br />
+								<input type="text" id="scaleneSide3" /><br /><br />
+							</div>
+							<div>
+								<input type="button" class="btn btn-primary" value="Calculate"  onClick="calculateTri1()" />
+							</div><br />
+							<div id="data21"></div>
 						</div>
-						<div>Enter the Third Side (c): <br />
-							<input type="text" id="side3" /><br /><br />
+						
+						<div id="equilateral" class="group2">
+							<div>Enter the Side (a): <br />
+								<input type="text" id="eqilateralSide" />
+							</div><br />
+							<div>
+								<input type="button" class="btn btn-primary" value="Calculate"  onClick="calculateTri2()" />
+							</div><br />
+							<div id="data22"></div>
 						</div>
-						<div>
-							<input type="button" class="btn btn-primary" value="Calculate"  onClick="calculateTri()" />
-						</div><br />
-						<div id="data2"></div>
+						
+						<div id="isosceles" class="group2">
+							<div>Enter the Side of Equal Length (a): <br />
+								<input type="text" id="isoscelesSide1" />
+							</div><br />
+							<div>Enter the Second Side (b): <br />
+								<input type="text" id="isoscelesSide2" /><br /><br />
+							</div>
+							<div>
+								<input type="button" class="btn btn-primary" value="Calculate"  onClick="calculateTri3()" />
+							</div><br />
+							<div id="data23"></div>
+						</div>
+						
+						<div id="right" class="group2">
+							<div>Enter the base (b): <br />
+								<input type="text" id="rightSide1" />
+							</div><br />
+							<div>Enter the height (p): <br />
+								<input type="text" id="rightSide2" /><br /><br />
+							</div>
+							<div>Enter the hypotenuse  (h): <br />
+								<input type="text" id="rightSide3" /><br /><br />
+							</div>
+							<div>
+								<input type="button" class="btn btn-primary" value="Calculate"  onClick="calculateTri4()" />
+							</div><br />
+							<div id="data24"></div>
+						</div>
 					</div>
+					
 					<div class="col-md-4 col-xs-12">
-						<h3>Circle</h3>
+						<h3>Circle/SemiCircle</h3>
 						<hr id="lineStyle">
 						<div>Enter the Radius (r): <br />
 							<input type="text" id="radius" />

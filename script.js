@@ -30,12 +30,19 @@ $(document).ready(function () {
     }
 	});
 	
+	$('.group').hide();
+	$('#square').show();
+	$('#selectMe').change(function () {
 		$('.group').hide();
-		$('#square').show();
-		$('#selectMe').change(function () {
-			$('.group').hide();
-			$('#'+$(this).val()).show();
-		})
+		$('#'+$(this).val()).show();
+	})
+	
+	$('.group2').hide();
+	$('#scalene').show();
+	$('#selectTri').change(function () {
+		$('.group2').hide();
+		$('#'+$(this).val()).show();
+	})
 
 });// jquery ends here
 
@@ -144,43 +151,128 @@ function calculateQuad5() {
 	if(isNaN(ks1) || isNaN(ks2)){
 		document.getElementById('quadData5').innerHTML = "Please  enter numbers only";
 		return;
-	} else if ( ks1 <= 0 || ks2 <=0 ){
+	} else if ( ks1 <= 0 || ks2 <= 0 ){
 		document.getElementById('quadData5').innerHTML = "Negative numbers and Zero don't make sense";
 		return;
     } else {
 		document.getElementById('quadData5').innerHTML = "Area: " + area	+ "<br />Perimeter: " + perimeter; 
 	}
 }
+
 //#2 Triangle
-function calculateTri() {
-	var s1 = document.getElementById('side1').value, 
-		s2 = document.getElementById('side2').value, 
-		s3 = document.getElementById('side3').value;
+function calculateTri1() {
+	var ss1 = document.getElementById('scaleneSide1').value, 
+		ss2 = document.getElementById('scaleneSide2').value, 
+		ss3 = document.getElementById('scaleneSide3').value;
 
-	var peri = ((s1 * 1) + (s2 * 1) + (s3 * 1)).toFixed(2);
+	var scalenePeri = ( parseInt(ss1) + parseInt(ss2) + parseInt(ss3) ).toFixed(2);
 	
-	var p  = peri / 2;
+	var p  = scalenePeri / 2;
 
-	var area2 = (Math.sqrt(p * (p - s1) * (p - s2) * (p - s3))).toFixed(2);
+	var scaleneArea = ( Math.sqrt(p * (p - ss1) * (p - ss2) * (p - ss3)) ).toFixed(2);
 	
-	if(isNaN(s1) || isNaN(s2)|| isNaN(s3)){
-		document.getElementById('data2').innerHTML = "Please  enter numbers only";
+	if(isNaN(ss1) || isNaN(ss2)|| isNaN(ss3)){
+		document.getElementById('data21').innerHTML = "Please  enter numbers only";
 		return;
-	} else if ( s1 <= 0 || s2 <=0 || s3 <=0){
-		document.getElementById('data2').innerHTML = "Negative numbers and Zero don't make sense";
+	} else if ( ss1 <= 0 || ss2 <= 0 || ss3 <= 0){
+		document.getElementById('data21').innerHTML = "Negative numbers and Zero don't make sense";
 		return;
     } else {
-		document.getElementById('data2').innerHTML = "Area: " + area2 + "<br />Perimeter: " + peri; 
+		document.getElementById('data21').innerHTML = "Area: " + scaleneArea + "<br />Perimeter: " + scalenePeri; 
 	}
 }
 
+function calculateTri2() {
+	var es = document.getElementById('eqilateralSide').value;
+
+	var eqilateralPeri = ( 3 * es ).toFixed(2);
+	
+	var eqilateralArea = ( ( Math.sqrt(3) * es ) / 4 ).toFixed(2);
+	
+	if(isNaN(es)){
+		document.getElementById('data22').innerHTML = "Please  enter numbers only";
+		return;
+	} else if ( es <= 0 ){
+		document.getElementById('data22').innerHTML = "Negative numbers and Zero don't make sense";
+		return;
+    } else {
+		document.getElementById('data22').innerHTML = "Area: " + eqilateralArea + "<br />Perimeter: " + eqilateralPeri; 
+	}
+}
+
+function calculateTri3() {
+	var is1 = document.getElementById('isoscelesSide1').value, 
+		is2 = document.getElementById('isoscelesSide2').value;
+
+	var isoscelesPeri = ( 2 * parseInt(is1) + parseInt(is2) ).toFixed(2);
+
+	var p  = isoscelesPeri / 2;
+
+	var isoscelesArea = ( Math.sqrt(p * Math.pow((p - is1),(2)) * (p - is2)) ).toFixed(2);
+	
+	if(isNaN(is1) || isNaN(is2)){
+		document.getElementById('data23').innerHTML = "Please  enter numbers only";
+		return;
+	} else if ( is1 <= 0 || is2 <= 0 ){
+		document.getElementById('data23').innerHTML = "Negative numbers and Zero don't make sense";
+		return;
+    } else {
+		document.getElementById('data23').innerHTML = "Area: " + isoscelesArea + "<br />Perimeter: " + isoscelesPeri; 
+	}
+}
+
+function calculateTri4() {
+	var rs1 = document.getElementById('rightSide1').value, 
+		rs2 = document.getElementById('rightSide2').value, 
+		rs3 = document.getElementById('rightSide3').value;
+
+	var rightPeri = ( parseInt(rs1) + parseInt(rs2) + parseInt(rs3) ).toFixed(2);
+	
+	var rightArea = ( ( parseInt(rs1) * parseInt(rs2) ) / 2  ).toFixed(2);
+	
+	if(isNaN(rs1) || isNaN(rs2)|| isNaN(rs3)){
+		document.getElementById('data24').innerHTML = "Please  enter numbers only";
+		return;
+	} else if ( rs1 <= 0 || rs2 <=0 || rs3 <=0){
+		document.getElementById('data24').innerHTML = "Negative numbers and Zero don't make sense";
+		return;
+    } else {
+		document.getElementById('data24').innerHTML = "Area: " + rightArea + "<br />Perimeter: " + rightPeri; 
+	}
+}
+
+function calculateTri5() {
+	var ss1 = document.getElementById('scaleneSide1').value, 
+		ss2 = document.getElementById('scaleneSide2').value, 
+		ss3 = document.getElementById('scaleneSide3').value;
+
+	var peri = ((ss1 * 1) + (ss2 * 1) + (ss3 * 1)).toFixed(2);
+	
+	var p  = peri / 2;
+
+	var area2 = (Math.sqrt(p * (p - ss1) * (p - ss2) * (p - ss3))).toFixed(2);
+	
+	if(isNaN(ss1) || isNaN(ss2)|| isNaN(ss3)){
+		document.getElementById('data25').innerHTML = "Please  enter numbers only";
+		return;
+	} else if ( ss1 <= 0 || ss2 <=0 || ss3 <=0){
+		document.getElementById('data25').innerHTML = "Negative numbers and Zero don't make sense";
+		return;
+    } else {
+		document.getElementById('data25').innerHTML = "Area: " + area2 + "<br />Perimeter: " + peri; 
+	}
+}
 //#3 Circle
 function calculateCircle() {
 	var r = document.getElementById('radius').value;
 
 	var circlePeri = (2 * Math.PI * r).toFixed(2);
 	
-	var circlAarea = (Math.PI * r * r).toFixed(2);
+	var circleArea = (Math.PI * r * r).toFixed(2);
+	
+	var scircleArea = ( ( circleArea ) / 2 ).toFixed(2);
+	
+	var scirclePeri = ( Math.PI * r ).toFixed(2);
 	
 	if(isNaN(r)){
 		document.getElementById('data3').innerHTML = "Please  enter numbers only";
@@ -189,7 +281,10 @@ function calculateCircle() {
 		document.getElementById('data3').innerHTML = "Negative numbers and Zero don't make sense";
 		return;
     } else {
-		document.getElementById('data3').innerHTML = "Area: " + circlAarea + "<br />Perimeter: " + circlePeri; 
+		document.getElementById('data3').innerHTML = "<b>Circle</b>" + 
+		"<br />Area: " + circleArea + "<br />Perimeter: " + circlePeri +
+		"<br /><br /><b>SemiCircle</b> " + 
+		"<br />Area: " + scircleArea + "<br />Perimeter: " + scirclePeri; 
 	}
 }
 
