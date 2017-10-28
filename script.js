@@ -59,6 +59,24 @@ function calculateQuad1() {
 		document.getElementById('quadData1').innerHTML = "Area: " + area	+ "<br />Perimeter: " + perimeter; 
 	}
 }
+function calculateQuad() {
+	var rl = document.getElementById('rectLength').value
+	, rb = document.getElementById('rectBreadth').value;
+
+	var perimeter = ( 2 * ( parseInt(rl) + parseInt(rb) ) ).toFixed(2);
+
+	var area = (rl * rb).toFixed(2);
+	
+	if(isNaN(rl) || isNaN(rb)){
+		document.getElementById('quadData').innerHTML = "Please  enter numbers only";
+		return;
+	} else if ( rl <= 0 || rb <=0 ){
+		document.getElementById('quadData').innerHTML = "Negative numbers and Zero don't make sense";
+		return;
+    } else {
+		document.getElementById('quadData').innerHTML = "Area: " + area	+ "<br />Perimeter: " + perimeter; 
+	}
+}
 function calculateQuad2() {
 	var ql2 = document.getElementById('quadLength2').value
 
