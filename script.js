@@ -31,7 +31,7 @@ $(document).ready(function () {
 	});
 	
 		$('.group').hide();
-		$('#parallelogram').show();
+		$('#square').show();
 		$('#selectMe').change(function () {
 			$('.group').hide();
 			$('#'+$(this).val()).show();
